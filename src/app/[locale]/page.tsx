@@ -354,13 +354,22 @@ export default async function LocalePage({
                 <dt className="w-16 text-zinc-500 dark:text-zinc-400">
                   Telegram
                 </dt>
-                <dd>{data.contacts.telegram}</dd>
+                <dd>
+                  <a
+                    target="_blank"
+                    href={data.contacts.telegram}
+                    className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
+                  >
+                    @Anton_Moldakov
+                  </a>
+                </dd>
               </div>
               <div className="flex gap-2">
                 <dt className="w-16 text-zinc-500 dark:text-zinc-400">Email</dt>
                 <dd>
                   <a
                     href={`mailto:${data.contacts.email}`}
+                    target="_blank"
                     className="underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     {data.contacts.email}
@@ -374,6 +383,7 @@ export default async function LocalePage({
                 <dd>
                   <a
                     href={data.contacts.linkedin}
+                    target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     linkedin.com/in/antonmoldakov
@@ -387,6 +397,7 @@ export default async function LocalePage({
                 <dd>
                   <a
                     href={data.contacts.github}
+                    target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     github.com/AntonMoldakov
@@ -400,6 +411,7 @@ export default async function LocalePage({
                 <dd>
                   <a
                     href={data.contacts.gitlab}
+                    target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     gitlab.com/AntonMoldakov
