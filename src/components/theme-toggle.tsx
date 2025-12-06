@@ -2,10 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { useMetrica } from 'next-yandex-metrica';
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  const { reachGoal } = useMetrica();
+
+  const handleClick = () => {
+    reachGoal('theme_toggle');
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -25,7 +32,10 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      onClick={() => {
+        handleClick();
+        setTheme(isDark ? 'light' : 'dark');
+      }}
       className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wide shadow-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800"
       aria-label={label}
     >

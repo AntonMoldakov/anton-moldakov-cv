@@ -4,6 +4,7 @@ import { ThemeToggle } from '../../components/theme-toggle';
 import { LangSwitcher } from '../../components/lang-switcher';
 import { PrintButton } from '../../components/print-button';
 import { CvAvatar } from '../../components/cv-avatar';
+import { ALink } from '@/components/a-link';
 
 const LOCALES = ['ru', 'en'] as const;
 
@@ -215,14 +216,14 @@ function renderTextWithLinks(text: string) {
     const href = hasProtocol ? url : `https://${url}`;
 
     parts.push(
-      <a
+      <ALink
         key={`${url}-${start}`}
         href={href}
         target="_blank"
         className="underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
       >
         {url}
-      </a>
+      </ALink>
     );
 
     lastIndex = start + url.length;
@@ -355,25 +356,25 @@ export default async function LocalePage({
                   Telegram
                 </dt>
                 <dd>
-                  <a
+                  <ALink
                     target="_blank"
                     href={data.contacts.telegram}
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     @Anton_Moldakov
-                  </a>
+                  </ALink>
                 </dd>
               </div>
               <div className="flex gap-2">
                 <dt className="w-16 text-zinc-500 dark:text-zinc-400">Email</dt>
                 <dd>
-                  <a
+                  <ALink
                     href={`mailto:${data.contacts.email}`}
                     target="_blank"
                     className="underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     {data.contacts.email}
-                  </a>
+                  </ALink>
                 </dd>
               </div>
               <div className="flex gap-2">
@@ -381,13 +382,13 @@ export default async function LocalePage({
                   LinkedIn
                 </dt>
                 <dd>
-                  <a
+                  <ALink
                     href={data.contacts.linkedin}
                     target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     linkedin.com/in/antonmoldakov
-                  </a>
+                  </ALink>
                 </dd>
               </div>
               <div className="flex gap-2">
@@ -395,13 +396,13 @@ export default async function LocalePage({
                   GitHub
                 </dt>
                 <dd>
-                  <a
+                  <ALink
                     href={data.contacts.github}
                     target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     github.com/AntonMoldakov
-                  </a>
+                  </ALink>
                 </dd>
               </div>
               <div className="flex gap-2">
@@ -409,13 +410,13 @@ export default async function LocalePage({
                   GitLab
                 </dt>
                 <dd>
-                  <a
+                  <ALink
                     href={data.contacts.gitlab}
                     target="_blank"
                     className="break-all underline decoration-dotted underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
                   >
                     gitlab.com/AntonMoldakov
-                  </a>
+                  </ALink>
                 </dd>
               </div>
             </dl>

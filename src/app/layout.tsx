@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '../components/theme-provider';
+import { YandexMetricaProvider } from 'next-yandex-metrica';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,7 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <YandexMetricaProvider
+          tagID={105704863}
+          initParameters={{
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+          }}
+          router="app"
+        >
+          <ThemeProvider>{children}</ThemeProvider>
+        </YandexMetricaProvider>
       </body>
     </html>
   );

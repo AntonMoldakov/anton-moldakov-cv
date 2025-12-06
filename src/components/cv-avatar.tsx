@@ -3,20 +3,27 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Modal } from './ui/modal';
+import { useMetrica } from 'next-yandex-metrica';
 
 type CvAvatarProps = {
   isRu: boolean;
 };
 
 export function CvAvatar({ isRu }: CvAvatarProps) {
+  const { reachGoal } = useMetrica();
   const [open, setOpen] = useState(false);
   const avatarSrc = `avatar.jpg`;
+
+  const handleOpen = () => {
+    setOpen(true);
+    reachGoal('avatar_open');
+  };
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={handleOpen}
         className="group relative inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-zinc-200 bg-zinc-50 shadow-sm ring-2 ring-zinc-100 transition hover:-translate-y-0.5 hover:ring-zinc-300 dark:border-zinc-700 dark:bg-zinc-900 dark:ring-zinc-900 hover:dark:ring-zinc-600"
         aria-label={
           isRu

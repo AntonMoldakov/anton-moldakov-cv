@@ -1,5 +1,6 @@
 'use client';
 
+import { useMetrica } from 'next-yandex-metrica';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -29,9 +30,16 @@ export function LangSwitcher({ locale }: { locale: 'ru' | 'en' }) {
 
   const href = getToggledPath(pathname ?? '/', targetLocale);
 
+  const { reachGoal } = useMetrica();
+
+  const handleClick = () => {
+    reachGoal('lang_switch');
+  };
+
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className="inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wide shadow-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800"
     >
       <span>{locale === 'ru' ? 'RU' : 'EN'}</span>
