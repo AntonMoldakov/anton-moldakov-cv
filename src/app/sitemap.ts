@@ -1,4 +1,4 @@
-import { APP_URL } from '@/config';
+import { APP_URL } from '@/constants/config';
 import { getPosts, type PortfolioPost } from '@/lib/posts';
 
 const LOCALES = ['ru', 'en'] as const;

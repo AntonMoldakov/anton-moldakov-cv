@@ -2,9 +2,10 @@
 
 import * as React from 'react';
 import { ALink } from '@/components/a-link';
+import { useLocalePaths } from '@/hooks/use-locale-paths';
 
 import type portfolioEn from '@/locales/en/portfolio.json';
-import { usePathname } from 'next/navigation';
+import { APP_ROUTES } from '@/constants/app-routes';
 
 const LOCALES = ['ru', 'en'] as const;
 
@@ -33,7 +34,7 @@ export function PortfolioList({ locale, messages: t, posts }: Props) {
   const [query, setQuery] = React.useState('');
   const [sort, setSort] = React.useState<'asc' | 'desc'>('desc');
 
-  const pathname = usePathname() ?? '/';
+  const { createPath } = useLocalePaths();
 
   const filtered = React.useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -109,7 +110,7 @@ export function PortfolioList({ locale, messages: t, posts }: Props) {
               className="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white/80 shadow-sm ring-1 ring-zinc-100 transition hover:-translate-y-0.5 hover:shadow-md hover:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-950/80 dark:ring-zinc-900 dark:hover:ring-zinc-700"
             >
               <ALink
-                href={`${pathname}/${post.slug}`}
+                href={createPath(APP_ROUTES.PORTFOLIO_ITEM(post.slug))}
                 className="flex flex-1 flex-col"
               >
                 <div className="relative h-40 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">

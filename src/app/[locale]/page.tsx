@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ThemeToggle } from '../../components/theme-toggle';
-import { LangSwitcher } from '../../components/lang-switcher';
 import { PrintButton } from '../../components/print-button';
 import { CvAvatar } from '../../components/cv-avatar';
 import { ALink } from '@/components/a-link';
+import { APP_URL } from '@/constants/config';
 
 const LOCALES = ['ru', 'en'] as const;
 
@@ -260,7 +259,7 @@ export async function generateMetadata({
       ? 'CV и портфолио Антона Молдакова: CTO, Teamlead, Frontend & Mobile developer (React, Next.js, React Native, архитектура, DevOps).'
       : 'CV and portfolio of Anton Moldakov: CTO, Team Lead, Frontend & Mobile Engineer (React, Next.js, React Native, architecture, DevOps).';
 
-  const baseUrl = 'https://antonmoldakov.github.io/anton-moldakov-cv';
+  const baseUrl = APP_URL;
 
   return {
     title: `${data.name} ${titleSuffix}`,

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://antonmoldakov.github.io/anton-moldakov-cv/sitemap.xml
+Sitemap: https://moldakov-anton.ru/sitemap.xml

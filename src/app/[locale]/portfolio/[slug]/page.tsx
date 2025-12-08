@@ -4,8 +4,10 @@ import { notFound } from 'next/navigation';
 import portfolioEn from '@/locales/en/portfolio.json';
 import portfolioRu from '@/locales/ru/portfolio.json';
 import { HTMLRenderComponent } from '@/components/html-render-component';
-import { APP_URL } from '@/config';
+import { APP_URL } from '@/constants/config';
 import { getPosts } from '@/lib/posts';
+import { APP_ROUTES } from '@/constants/app-routes';
+import { createLocalePath } from '@/lib/paths';
 
 const LOCALES = ['ru', 'en'] as const;
 
@@ -113,7 +115,7 @@ export default async function PortfolioPostPage({ params }: PageProps) {
   return (
     <article className="space-y-6">
       <a
-        href={`${APP_URL}/${locale}/portfolio`}
+        href={createLocalePath(locale, APP_ROUTES.PORTFOLIO)}
         className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
       >
         &larr; {t.post.back}
