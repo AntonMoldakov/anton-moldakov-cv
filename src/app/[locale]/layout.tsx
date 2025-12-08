@@ -9,19 +9,21 @@ const LOCALES = ['ru', 'en'] as const;
 
 type Locale = (typeof LOCALES)[number];
 
-type LayoutProps = {
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
   children: ReactNode;
-  params: Promise<{ locale: Locale }>;
-};
-
-export default async function LocaleLayout({ children, params }: LayoutProps) {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
+  const typedLocale = locale as Locale;
 
-  if (!LOCALES.includes(locale)) {
+  if (!LOCALES.includes(typedLocale)) {
     notFound();
   }
 
-  const t = locale === 'ru' ? ruCv : enCv;
+  const t = typedLocale === 'ru' ? ruCv : enCv;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 px-4 py-6 text-zinc-900 dark:from-black dark:to-zinc-950 dark:text-zinc-50">
@@ -29,13 +31,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <header className="flex flex-wrap items-center justify-between gap-3 border-b border-dashed border-zinc-200 pb-3 text-sm dark:border-zinc-800">
           <nav className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
             <a
-              href={`/${locale}`}
+              href={`/${typedLocale}`}
               className="rounded-full border border-transparent px-3 py-1 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
             >
               {t.nav.cv}
             </a>
             <a
-              href={`/${locale}/portfolio`}
+              href={`/${typedLocale}/portfolio`}
               className="rounded-full border border-transparent px-3 py-1 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
             >
               {t.nav.portfolio}
@@ -43,7 +45,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <LangSwitcher locale={locale} />
+            <LangSwitcher locale={typedLocale} />
             <ThemeToggle />
           </div>
         </header>

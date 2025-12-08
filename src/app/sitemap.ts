@@ -3,6 +3,8 @@ import { getPosts, type PortfolioPost } from '@/lib/posts';
 
 const LOCALES = ['ru', 'en'] as const;
 
+export const dynamic = 'force-static';
+
 export default async function sitemap() {
   const posts = await getPosts();
 
