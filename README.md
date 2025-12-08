@@ -1,6 +1,6 @@
 ## Anton Moldakov — CV & Portfolio
 
-This repository contains Anton Moldakov's personal website-resume.
+This repository contains Anton Moldakov's personal website-resume. Created with AI.
 
 - Two locales: **Russian** (`/ru`) and **English** (`/en`).
 - Stack: **Next.js (App Router)**, **TypeScript**, **Tailwind CSS v4**, **next-themes**.

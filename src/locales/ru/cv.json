@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "cv": "Резюме",
+    "portfolio": "Портфолио"
+  },
+  "sections": {
+    "position": "Желаемая должность",
+    "skills": "Ключевые навыки",
+    "experience": "Опыт работы",
+    "education": "Образование",
+    "extra": "Дополнительно",
+    "contacts": "Контакты",
+    "entrepreneurship": "Предпринимательство",
+    "languages": "Языки",
+    "articles": "Статьи и публикации",
+    "portfolio": "Портфолио",
+    "hobbies": "Хобби"
+  },
+  "contacts": {
+    "telegram": "Telegram",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "gitlab": "GitLab"
+  },
+  "footer": {
+    "note": "Готов выслать дополнительные материалы и примеры кода по запросу."
+  }
+}

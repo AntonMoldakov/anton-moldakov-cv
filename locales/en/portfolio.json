@@ -1,0 +1,19 @@
+{
+  "title": "Portfolio",
+  "search": {
+    "placeholder": "Search by tags, title, description",
+    "label": "Search"
+  },
+  "sort": {
+    "label": "Sort",
+    "asc": "Oldest first",
+    "desc": "Newest first"
+  },
+  "list": {
+    "empty": "No posts yet.",
+    "createdAt": "Created at"
+  },
+  "post": {
+    "back": "Back to portfolio"
+  }
+}

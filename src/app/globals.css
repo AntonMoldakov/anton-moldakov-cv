@@ -32,6 +32,127 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.html-render {
+  max-width: 100%;
+}
+
+.html-render h1,
+.html-render h2,
+.html-render h3,
+.html-render h4,
+.html-render h5,
+.html-render h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+html.dark .html-render h1,
+html.dark .html-render h2,
+html.dark .html-render h3,
+html.dark .html-render h4,
+html.dark .html-render h5,
+html.dark .html-render h6 {
+  color: #f4f4f5;
+}
+
+.html-render h1 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+
+.html-render h2 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.html-render h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.html-render p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #27272a;
+}
+
+html.dark .html-render p {
+  color: #e4e4e7;
+}
+
+.html-render a {
+  color: #059669;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.html-render a:hover {
+  color: #16a34a;
+}
+
+.html-render span.accent {
+  color: #2059c9;
+  font-weight: 600;
+}
+
+html.dark .html-render a {
+  color: #34d399;
+}
+
+html.dark .html-render a:hover {
+  color: #6ee7b7;
+}
+
+.html-render strong {
+  font-weight: 600;
+}
+
+.html-render ul,
+.html-render ol {
+  padding-left: 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.html-render ul {
+  list-style-type: disc;
+}
+
+.html-render ol {
+  list-style-type: decimal;
+}
+
+.html-render li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.html-render blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(16, 185, 129, 0.6);
+  color: #4b5563;
+  font-style: italic;
+}
+
+html.dark .html-render blockquote {
+  color: #9ca3af;
+  border-left-color: rgba(52, 211, 153, 0.7);
+}
+
+.html-render img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 @media print {
   html,
   body {

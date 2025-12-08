@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "cv": "CV",
+    "portfolio": "Portfolio"
+  },
+  "sections": {
+    "position": "Desired position",
+    "skills": "Key skills",
+    "experience": "Experience",
+    "education": "Education",
+    "extra": "Additional",
+    "contacts": "Contacts",
+    "entrepreneurship": "Entrepreneurship",
+    "languages": "Languages",
+    "articles": "Articles",
+    "portfolio": "Portfolio",
+    "hobbies": "Hobbies"
+  },
+  "contacts": {
+    "telegram": "Telegram",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "gitlab": "GitLab"
+  },
+  "footer": {
+    "note": "Happy to share additional materials and code samples on request."
+  }
+}
