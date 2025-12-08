@@ -5,7 +5,7 @@ import portfolioEn from '@/locales/en/portfolio.json';
 import portfolioRu from '@/locales/ru/portfolio.json';
 import { HTMLRenderComponent } from '@/components/html-render-component';
 import { APP_URL } from '@/config';
-import { getPosts, type PortfolioPost } from '@/lib/posts';
+import { getPosts } from '@/lib/posts';
 
 const LOCALES = ['ru', 'en'] as const;
 
@@ -113,7 +113,7 @@ export default async function PortfolioPostPage({ params }: PageProps) {
   return (
     <article className="space-y-6">
       <a
-        href={`/${locale}/portfolio`}
+        href={`${APP_URL}/${locale}/portfolio`}
         className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
       >
         &larr; {t.post.back}

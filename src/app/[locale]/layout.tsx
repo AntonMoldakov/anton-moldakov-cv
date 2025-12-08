@@ -31,13 +31,13 @@ export default async function LocaleLayout({
         <header className="flex flex-wrap items-center justify-between gap-3 border-b border-dashed border-zinc-200 pb-3 text-sm dark:border-zinc-800">
           <nav className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
             <a
-              href={`/${typedLocale}`}
+              href={`${typedLocale}`}
               className="rounded-full border border-transparent px-3 py-1 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
             >
               {t.nav.cv}
             </a>
             <a
-              href={`/${typedLocale}/portfolio`}
+              href={`${typedLocale}/portfolio`}
               className="rounded-full border border-transparent px-3 py-1 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
             >
               {t.nav.portfolio}
