@@ -113,6 +113,13 @@ html.dark .html-render a:hover {
   font-weight: 600;
 }
 
+.html-render mark {
+  background-color: #fbf088;
+  display: block;
+  padding: 16px;
+  border-radius: 16px;
+}
+
 .html-render ul,
 .html-render ol {
   padding-left: 1.25rem;
