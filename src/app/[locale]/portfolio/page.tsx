@@ -1,16 +1,11 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import portfolioEn from '@/locales/en/portfolio.json';
 import portfolioRu from '@/locales/ru/portfolio.json';
 import { PortfolioList } from '@/components/portfolio-list';
-
-const LOCALES = ['ru', 'en'] as const;
-
-type Locale = (typeof LOCALES)[number];
+import { getPosts } from '@/lib/posts';
+import { Locale, LOCALES } from '@/constants/locales';
 
 type PortfolioMessages = typeof portfolioEn;
 
@@ -25,17 +20,23 @@ type PortfolioPost = {
   content: string;
 };
 
-async function getPosts(locale: Locale): Promise<PortfolioPost[]> {
-  const filePath = path.join(
-    process.cwd(),
-    'src',
-    'data',
-    'portfolio-posts.json'
-  );
-  const raw = await fs.readFile(filePath, 'utf-8');
-  const allPosts = JSON.parse(raw) as PortfolioPost[];
+async function getPostsLocalList(locale: Locale): Promise<PortfolioPost[]> {
+  const posts = await getPosts();
 
-  return allPosts.filter((post) => post.locale === locale);
+  return posts
+    .filter((post) => !!post.locales[locale])
+    .map((post) => {
+      return {
+        createdAt: post.createdAt,
+        image: post.image,
+        locale: locale,
+        slug: post.slug,
+        tags: post.tags,
+        title: post.locales[locale].title,
+        shortDescription: post.locales[locale].shortDescription,
+        content: post.locales[locale].content,
+      };
+    });
 }
 
 function getMessages(locale: Locale): PortfolioMessages {
@@ -62,7 +63,7 @@ export default async function PortfolioPage({ params }: PageProps) {
     notFound();
   }
 
-  const posts = await getPosts(locale);
+  const posts = await getPostsLocalList(locale);
   const t = getMessages(locale);
 
   return <PortfolioList locale={locale} messages={t} posts={posts} />;

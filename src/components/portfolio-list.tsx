@@ -6,10 +6,7 @@ import { useLocalePaths } from '@/hooks/use-locale-paths';
 
 import type portfolioEn from '@/locales/en/portfolio.json';
 import { APP_ROUTES } from '@/constants/app-routes';
-
-const LOCALES = ['ru', 'en'] as const;
-
-type Locale = (typeof LOCALES)[number];
+import { Locale } from '@/constants/locales';
 
 type PortfolioMessages = typeof portfolioEn;
 

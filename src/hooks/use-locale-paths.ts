@@ -2,8 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-const LOCALES = ['ru', 'en'] as const;
-type Locale = (typeof LOCALES)[number];
+import { Locale, LOCALES } from '@/constants/locales';
 
 export function useLocalePaths() {
   const pathname = usePathname() ?? '/';

@@ -8,10 +8,7 @@ import { APP_URL } from '@/constants/config';
 import { getPosts } from '@/lib/posts';
 import { APP_ROUTES } from '@/constants/app-routes';
 import { createLocalePath } from '@/lib/paths';
-
-const LOCALES = ['ru', 'en'] as const;
-
-type Locale = (typeof LOCALES)[number];
+import { Locale, LOCALES } from '@/constants/locales';
 
 type PortfolioMessages = typeof portfolioEn;
 
@@ -22,10 +19,14 @@ function getMessages(locale: Locale): PortfolioMessages {
 export async function generateStaticParams() {
   const posts = await getPosts();
 
-  return posts.map((post) => ({
-    locale: post.locale,
-    slug: post.slug,
-  }));
+  const params = posts.flatMap((post) =>
+    Object.keys(post.locales).map((locale) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
+
+  return params;
 }
 
 export async function generateMetadata({
@@ -36,9 +37,11 @@ export async function generateMetadata({
   const { locale: rawLocale, slug } = await params;
   const locale = (rawLocale as Locale) || 'ru';
   const posts = await getPosts();
-  const post = posts.find((p) => p.slug === slug && p.locale === locale);
+  const post = posts.find((p) => p.slug === slug);
 
-  if (!post) return {};
+  const postContent = post?.locales[locale];
+
+  if (!post || !postContent) return {};
 
   const siteUrl = APP_URL;
   const pageUrl = `${siteUrl}/${locale}/portfolio/${slug}`;
@@ -47,13 +50,13 @@ export async function generateMetadata({
     : `${siteUrl}${post.image}`;
 
   return {
-    title: `${post.title} | Portfolio`,
-    description: post.shortDescription,
+    title: `${postContent.title} | Portfolio`,
+    description: postContent.shortDescription,
     keywords: ['portfolio', 'projects', ...post.tags],
     authors: [{ name: 'Anton Moldakov' }],
     openGraph: {
-      title: post.title,
-      description: post.shortDescription,
+      title: postContent.title,
+      description: postContent.shortDescription,
       url: pageUrl,
       siteName: 'Anton Moldakov',
       images: [
@@ -61,7 +64,7 @@ export async function generateMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: postContent.title,
         },
       ],
       locale: locale,
@@ -106,9 +109,10 @@ export default async function PortfolioPostPage({ params }: PageProps) {
   const t = getMessages(locale);
 
   const posts = await getPosts();
-  const post = posts.find((p) => p.slug === slug && p.locale === locale);
+  const post = posts.find((p) => p.slug === slug);
+  const postContent = post?.locales[locale];
 
-  if (!post) {
+  if (!post || !postContent) {
     notFound();
   }
 
@@ -147,23 +151,23 @@ export default async function PortfolioPostPage({ params }: PageProps) {
         </div>
 
         <h1 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          {post.title}
+          {postContent.title}
         </h1>
 
         <p className="text-sm text-zinc-600 dark:text-zinc-300">
-          {post.shortDescription}
+          {postContent.shortDescription}
         </p>
       </header>
 
       <div className="overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
         <img
           src={post.image}
-          alt={post.title}
+          alt={postContent.title}
           className="h-64 w-full object-contain object-center"
         />
       </div>
 
-      <HTMLRenderComponent html={post.content} />
+      <HTMLRenderComponent html={postContent.content} />
     </article>
   );
 }

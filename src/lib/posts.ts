@@ -1,18 +1,17 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const LOCALES = ['ru', 'en'] as const;
-type Locale = (typeof LOCALES)[number];
+import { Locale } from '@/constants/locales';
 
 export interface PortfolioPost {
   slug: string;
-  locale: Locale;
-  title: string;
-  shortDescription: string;
   createdAt: string;
   tags: string[];
   image: string;
-  content: string;
+  locales: Record<
+    Locale,
+    { title: string; shortDescription: string; content: string }
+  >;
 }
 
 export async function getPosts(): Promise<PortfolioPost[]> {

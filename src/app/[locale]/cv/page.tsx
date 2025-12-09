@@ -4,10 +4,7 @@ import { PrintButton } from '../../../components/print-button';
 import { CvAvatar } from '../../../components/cv-avatar';
 import { ALink } from '@/components/a-link';
 import { APP_URL } from '@/constants/config';
-
-const LOCALES = ['ru', 'en'] as const;
-
-type Locale = (typeof LOCALES)[number];
+import { Locale, LOCALES } from '@/constants/locales';
 
 type CvBlock = {
   id: string;

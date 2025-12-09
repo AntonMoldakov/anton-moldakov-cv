@@ -5,10 +5,7 @@ import { ThemeToggle } from '../../components/theme-toggle';
 import { createLocalePath } from '../../lib/paths';
 import ruCv from '../../locales/ru/cv.json';
 import enCv from '../../locales/en/cv.json';
-
-const LOCALES = ['ru', 'en'] as const;
-
-type Locale = (typeof LOCALES)[number];
+import { Locale, LOCALES } from '@/constants/locales';
 
 export default async function LocaleLayout({
   children,

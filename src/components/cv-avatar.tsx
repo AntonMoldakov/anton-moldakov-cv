@@ -12,7 +12,7 @@ type CvAvatarProps = {
 export function CvAvatar({ isRu }: CvAvatarProps) {
   const { reachGoal } = useMetrica();
   const [open, setOpen] = useState(false);
-  const avatarSrc = `avatar.jpg`;
+  const avatarSrc = `/avatar.jpg`;
 
   const handleOpen = () => {
     setOpen(true);

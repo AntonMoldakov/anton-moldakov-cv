@@ -1,5 +1,4 @@
-const LOCALES = ['ru', 'en'] as const;
-type Locale = (typeof LOCALES)[number];
+import { Locale, LOCALES } from '@/constants/locales';
 
 export function createLocalePath(locale: Locale, path: string) {
   return `/${locale}${path.startsWith('/') ? '' : '/'}${path}`;

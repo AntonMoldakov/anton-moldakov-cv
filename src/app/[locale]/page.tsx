@@ -1,6 +1,5 @@
+import { LOCALES } from '@/constants/locales';
 import { redirect } from 'next/navigation';
-
-const LOCALES = ['ru', 'en'] as const;
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
