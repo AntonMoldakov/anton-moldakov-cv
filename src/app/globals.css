@@ -97,8 +97,48 @@ html.dark .html-render p {
 }
 
 .html-render span.accent {
-  color: #2059c9;
+  background: -webkit-linear-gradient(#bdaf25, #36c61f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 600;
+}
+
+.html-render pre,
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.html-render pre {
+  background: #0b1020;
+  color: #f8f8f2;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* ключевые настройки для переноса строк */
+  white-space: pre-wrap; /* сохраняет \n, но позволяет перенос строк */
+  word-wrap: break-word; /* старое имя, но полезно для совместимости */
+  overflow-x: visible; /* можно и auto, если хочешь частично скролл */
+}
+
+.html-render pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  color: inherit;
+}
+
+.html-render code {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #f8f8f2;
 }
 
 html.dark .html-render a {
