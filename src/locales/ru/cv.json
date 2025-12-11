@@ -3,6 +3,11 @@
     "cv": "Резюме",
     "portfolio": "Портфолио"
   },
+  "meta": {
+    "name": "Антон Молдаков",
+    "titleSuffix": "— CV и портфолио",
+    "description": "CV и портфолио Антона Молдакова: CTO, Teamlead, Frontend & Mobile developer (React, Next.js, React Native, архитектура, DevOps)."
+  },
   "sections": {
     "position": "Желаемая должность",
     "skills": "Ключевые навыки",
@@ -13,8 +18,8 @@
     "entrepreneurship": "Предпринимательство",
     "languages": "Языки",
     "articles": "Статьи и публикации",
-    "portfolio": "Портфолио",
-    "hobbies": "Хобби"
+    "hobbies": "Хобби",
+    "softSkills": "Soft Skills"
   },
   "contacts": {
     "telegram": "Telegram",
@@ -23,7 +28,84 @@
     "github": "GitHub",
     "gitlab": "GitLab"
   },
+  "contactsLinks": {
+    "telegram": "https://t.me/Anton_Moldakov",
+    "email": "anton.moldakov@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/%D0%B0%D0%BD%D1%82%D0%BE%D0%BD%D0%BC%D0%BE%D0%BB%D0%B4%D0%B0%D0%BA%D0%BE%D0%B2-62a68428a",
+    "github": "https://github.com/AntonMoldakov",
+    "gitlab": "https://gitlab.com/AntonMoldakov"
+  },
+  "contactsDisplay": {
+    "telegram": "@Anton_Moldakov",
+    "email": "anton.moldakov@gmail.com",
+    "linkedin": "linkedin.com/in/antonmoldakov",
+    "github": "github.com/AntonMoldakov",
+    "gitlab": "gitlab.com/AntonMoldakov"
+  },
+  "current": "Сейчас",
+  "skillsLabels": {
+    "frontend": "Frontend:",
+    "mobile": "Mobile:",
+    "backend": "Backend:",
+    "architecture": "Архитектура:",
+    "tools": "CI/CD & Tools:",
+    "web3": "Web3:",
+    "soft": "Soft Skills"
+  },
+  "profile": {
+    "desiredPosition": "CTO / Руководитель разработки / Teamlead (полная/частичная/проектная занятость, гибкий график/удалённо/офис)",
+    "summary": "CTO с опытом построения команд, архитектуры и поставки и реализации сложных веб и мобильных продуктов на React, Next.js и React Native."
+  },
+  "skills": {
+    "frontend": "React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Redux, GraphQL, React Admin",
+    "mobile": "React Native (публикация, анимации, нативные модули и компоненты, новая архитектура, Expo), Flutter",
+    "backend": "Node.js, NestJS, PostgreSQL, Docker",
+    "architecture": "Feature Sliced Design, чистая и модульная архитектура, микрофронтенды, монорепозитории",
+    "tools": "Git, Figma, CI/CD (Vercel, Coolify, AWS, Yandex Cloud, Fastlane, AppCenter)",
+    "soft": "Управление командами, Event Stormинг, менторство, собеседования, развитие разработчиков",
+    "web3": "Multichan Wallet, криптосети: BTC, ETH (в целом EVM сети), TON, TRX, SOL, POL, Wallet Connect. Транзакции, расчет газа, работа с провайдерами"
+  },
+  "experience": [
+    {
+      "companyHtml": "<a href=\"https://www.purrweb.com/ru/\" target=\"_blank\" rel=\"noopener noreferrer\">Purweb</a>",
+      "period": "Сентябрь 2024 — настоящее время",
+      "roles": [
+        "CTO в аутсорс-компании: разработка и внедрение грейдинг системы, ресерч и внедрение новых инструментов и подходов в управлении и разработке проектов, стратегическое планирование и управление техническими ресурсами, оптимизация процессов разработки, работа с рекрутментом и стратегиями найма."
+      ]
+    },
+    {
+      "companyHtml": "<a href=\"https://www.purrweb.com/ru/\" target=\"_blank\" rel=\"noopener noreferrer\">Purweb</a>",
+      "period": "Сентябрь 2022 — Сентябрь 2024 (2 года)",
+      "roles": [
+        "Ведущий разработчик / Teamlead: руководство командой из 14+ разработчиков (веб и мобильные проекты), внедрение архитектуры Feature Sliced Design, ведение 10+ проектов от начала до релиза или перехода в поддержку, проектирование через Event Storming, ресерч, составление карты рисков, построение схем и диаграмм архитектуры системы."
+      ]
+    },
+    {
+      "companyHtml": "<a href=\"https://www.purrweb.com/ru/\" target=\"_blank\" rel=\"noopener noreferrer\">Purweb</a>",
+      "period": "Июнь 2021 — Сентябрь 2024 (3 года 4 месяца)",
+      "roles": [
+        "Frontend Developer & Mobile Developer: комплексные приложения на Next.js 15+ со streaming, lazy loading, SSR/SSG/ISR/CSR, middleware, AppRouter/PagesRouter; CI/CD (AWS, Yandex Cloud, Vercel, self-hosted Coolify); сложные архитектуры (монорепозитории, микрофронты); доступные веб-страницы; WYSIWYG; платёжные системы (Stripe, CloudPayments, Apple/Google Pay, web3-кошельки); высоконагруженные чаты (WebSocket, Pusher, Socket.IO); медиасервисы (видеостриминг, псевдостриминг, кастомные аудио- и видеоплееры, сжатие медиа); React Native (разработка с нуля, публикация в Google Play, App Store, RuStore, нативные модули и компоненты, новая архитектура, Expo, сложные анимации, Drag&Drop, фоторедакторы, настройка CI/CD: fastlane, AppCenter, CodePush)."
+      ]
+    },
+    {
+      "companyHtml": "Самозанятый",
+      "period": "Февраль 2020 — Сейчас",
+      "roles": [
+        "Разработка веб и мобильных приложений, лендинговые страницы, Telegram-боты."
+      ]
+    }
+  ],
+  "education": "Омский государственный технический университет, Бакалавр, Информатика и вычислительная техника (2019–2023).",
+  "entrepreneurship": "Самозанятый (Февраль 2020 — Сейчас): разработка веб и мобильных приложений, лендинговые страницы, Telegram-боты.",
+  "languages": "Русский (родной), Английский (B2), Испанский (A1)",
+  "articlesHtml": "Статьи на Хабре: <a href=\"https://habr.com/ru/users/AntonMoldakov\" target=\"_blank\">habr.com/ru/users/AntonMoldakov</a>, воркшоп по Next.js: <a href=\"https://gitlab.com/AntonMoldakov/nextjs-workshop\" target=\"_blank\">gitlab.com/AntonMoldakov/nextjs-workshop</a>",
+  "hobbies": "Изучение новых технологий, менторство, занимаюсь греплингом и bjj, изучаю новые языки.",
   "footer": {
     "note": "Готов выслать дополнительные материалы и примеры кода по запросу."
-  }
+  },
+  "avatar": {
+    "openAria": "Открыть фотографию Антона Молдакова",
+    "alt": "Фотография Антона Молдакова"
+  },
+  "print": "Распечатать"
 }

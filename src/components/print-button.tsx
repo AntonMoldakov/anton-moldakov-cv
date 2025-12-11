@@ -2,7 +2,7 @@
 
 import { useMetrica } from 'next-yandex-metrica';
 
-export function PrintButton({ isRu }: { isRu: boolean }) {
+export function PrintButton({ label }: { label: string }) {
   const { reachGoal } = useMetrica();
 
   const handleClick = () => {
@@ -20,7 +20,7 @@ export function PrintButton({ isRu }: { isRu: boolean }) {
       }}
       className="rounded-full border border-zinc-300 px-3 py-1 font-medium uppercase tracking-wide shadow-sm transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
     >
-      {isRu ? 'Распечатать' : 'Print'}
+      {label}
     </button>
   );
 }
