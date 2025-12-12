@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import portfolioEn from '@/locales/en/portfolio.json';
 import portfolioRu from '@/locales/ru/portfolio.json';
 import { HTMLRenderComponent } from '@/components/html-render-component';
+import { PostImage } from '@/components/post-image';
 import { APP_URL } from '@/constants/config';
 import { getPosts } from '@/lib/posts';
 import { APP_ROUTES } from '@/constants/app-routes';
@@ -159,13 +160,12 @@ export default async function PortfolioPostPage({ params }: PageProps) {
         </p>
       </header>
 
-      <div className="overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
-        <img
-          src={post.image}
-          alt={postContent.title}
-          className="h-64 w-full object-contain object-center"
-        />
-      </div>
+      <PostImage
+        src={post.image}
+        alt={postContent.title}
+        className="rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900"
+        imgClassName="h-64 w-full"
+      />
 
       <HTMLRenderComponent html={postContent.content} />
     </article>

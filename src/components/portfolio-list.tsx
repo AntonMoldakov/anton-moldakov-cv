@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { ALink } from '@/components/a-link';
 import { useLocalePaths } from '@/hooks/use-locale-paths';
+import { PostImage } from '@/components/post-image';
 
 import type portfolioEn from '@/locales/en/portfolio.json';
 import { APP_ROUTES } from '@/constants/app-routes';
@@ -110,13 +111,12 @@ export function PortfolioList({ locale, messages: t, posts }: Props) {
                 href={createPath(APP_ROUTES.PORTFOLIO_ITEM(post.slug))}
                 className="flex flex-1 flex-col"
               >
-                <div className="relative h-40 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="h-full w-full object-contain object-center transition duration-300 group-hover:scale-105"
-                  />
-                </div>
+                <PostImage
+                  src={post.image}
+                  alt={post.title}
+                  className="h-40 w-full bg-zinc-100 dark:bg-zinc-900"
+                  imgClassName="h-full w-full transition duration-300 group-hover:scale-105"
+                />
 
                 <div className="flex flex-1 flex-col gap-2 p-4">
                   <div className="flex items-center justify-between gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">

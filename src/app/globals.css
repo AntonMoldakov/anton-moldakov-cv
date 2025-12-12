@@ -202,6 +202,12 @@ html.dark .html-render blockquote {
   border-radius: 0.5rem;
 }
 
+.html-render img.size-medium {
+  height: 400px;
+  width: 100%;
+  object-fit: contain;
+}
+
 @media print {
   html,
   body {
