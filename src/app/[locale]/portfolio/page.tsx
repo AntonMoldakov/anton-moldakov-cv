@@ -31,7 +31,7 @@ async function getPostsLocalList(locale: Locale): Promise<PortfolioPost[]> {
         image: post.image,
         locale: locale,
         slug: post.slug,
-        tags: post.tags,
+        tags: post.locales[locale].tags,
         title: post.locales[locale].title,
         shortDescription: post.locales[locale].shortDescription,
         content: post.locales[locale].content,

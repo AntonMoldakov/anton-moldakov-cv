@@ -6,11 +6,11 @@ import { Locale } from '@/constants/locales';
 export interface PortfolioPost {
   slug: string;
   createdAt: string;
-  tags: string[];
+
   image: string;
   locales: Record<
     Locale,
-    { title: string; shortDescription: string; content: string }
+    { title: string; shortDescription: string; content: string; tags: string[] }
   >;
 }
 

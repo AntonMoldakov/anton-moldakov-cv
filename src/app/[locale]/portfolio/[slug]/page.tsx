@@ -53,7 +53,7 @@ export async function generateMetadata({
   return {
     title: `${postContent.title} | Portfolio`,
     description: postContent.shortDescription,
-    keywords: ['portfolio', 'projects', ...post.tags],
+    keywords: ['portfolio', 'projects', ...postContent.tags],
     authors: [{ name: 'Anton Moldakov' }],
     openGraph: {
       title: postContent.title,
@@ -72,7 +72,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: post.createdAt,
       modifiedTime: post.createdAt,
-      tags: post.tags,
+      tags: postContent.tags,
     },
     alternates: {
       canonical: pageUrl,
@@ -140,7 +140,7 @@ export default async function PortfolioPostPage({ params }: PageProps) {
           </time>
 
           <div className="flex flex-wrap gap-1">
-            {post.tags.map((tag) => (
+            {postContent.tags.map((tag) => (
               <span
                 key={tag}
                 className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300"
