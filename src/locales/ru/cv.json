@@ -58,9 +58,9 @@
   },
   "skills": {
     "frontend": "React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Redux, GraphQL, React Admin",
-    "mobile": "React Native (публикация, анимации, нативные модули и компоненты, новая архитектура, Expo), Flutter",
+    "mobile": "React Native (публикация, анимации, нативные модули и компоненты, новая архитектура, Expo), Flutter, Appium",
     "backend": "Node.js, NestJS, PostgreSQL, Docker",
-    "architecture": "Feature Sliced Design, чистая и модульная архитектура, микрофронтенды, монорепозитории",
+    "architecture": "Feature Sliced Design, чистая и модульная архитектура, микрофронтенды, монорепозитории, MVC, MVP, MVI, MVVM and VIPER Design Patterns",
     "tools": "Git, Figma, CI/CD (Vercel, Coolify, AWS, Yandex Cloud, Fastlane, AppCenter)",
     "soft": "Управление командами, Event Stormинг, менторство, собеседования, развитие разработчиков",
     "web3": "Multichan Wallet, криптосети: BTC, ETH (в целом EVM сети), TON, TRX, SOL, POL, Wallet Connect. Транзакции, расчет газа, работа с провайдерами"

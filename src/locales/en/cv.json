@@ -58,9 +58,9 @@
   },
   "skills": {
     "frontend": "React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Redux, GraphQL, React Admin",
-    "mobile": "React Native (publishing, animations, native modules and components, new architecture, Expo), Flutter",
+    "mobile": "React Native (publishing, animations, native modules and components, new architecture, Expo), Flutter, Appium",
     "backend": "Node.js, NestJS, PostgreSQL, Docker",
-    "architecture": "Feature Sliced Design, clean and modular architecture, micro frontends, monorepositories",
+    "architecture": "Feature Sliced Design, clean and modular architecture, micro frontends, monorepositories, MVC, MVP, MVI, MVVM and VIPER Design Patterns",
     "tools": "Git, Figma, CI/CD (Vercel, Coolify, AWS, Yandex Cloud, Fastlane, AppCenter)",
     "soft": "Team management, Event Storming, mentoring, interviewing, team development",
     "web3": "BTC, ETH (EVM networks in general), TON, TRX, SOL, POL, Wallet Connect, transactions, gas calculation, provider integration"
