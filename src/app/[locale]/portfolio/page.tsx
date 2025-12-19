@@ -63,6 +63,22 @@ export default async function PortfolioPage({ params }: PageProps) {
     notFound();
   }
 
+  type Fn<A, B> = (x: A) => B;
+
+  const pipe =
+    <A, B, C, D>(fn1: Fn<A, B>, fn2: Fn<B, C>, fn3: Fn<C, D>): Fn<A, D> =>
+    (x: A): D => {
+      return fn3(fn2(fn1(x)));
+    };
+
+  const sum = (a: number) => (b: number) => a + b;
+  const mul = (a: number) => (b: number) => a * b;
+  const stringify = (a: number) => true;
+
+  const composed = pipe(sum(1), mul(2), stringify);
+
+  const result = composed(3);
+
   const posts = await getPostsLocalList(locale);
   const t = getMessages(locale);
 

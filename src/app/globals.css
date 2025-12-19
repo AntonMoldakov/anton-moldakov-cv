@@ -31,7 +31,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .html-render {
   max-width: 100%;
 }
@@ -206,6 +205,54 @@ html.dark .html-render blockquote {
   height: 400px;
   width: 100%;
   object-fit: contain;
+}
+
+/* table styles */
+
+.html-render table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.html-render thead {
+  background-color: #f4f4f5;
+}
+
+html.dark .html-render thead {
+  background-color: #27272a;
+}
+
+.html-render th,
+.html-render td {
+  border: 1px solid #e4e4e7;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+html.dark .html-render th,
+html.dark .html-render td {
+  border-color: #3f3f46;
+}
+
+.html-render th {
+  font-weight: 600;
+  color: #18181b;
+}
+
+html.dark .html-render th {
+  color: #f4f4f5;
+}
+
+.html-render tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+html.dark .html-render tbody tr:nth-child(even) {
+  background-color: #18181b;
 }
 
 @media print {
