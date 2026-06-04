@@ -67,8 +67,15 @@
   },
   "experience": [
     {
+      "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
+      "period": "Jun 2026 — present",
+      "roles": [
+        "Mobile Developer: Development of an internal calling platform"
+      ]
+    },
+    {
       "companyHtml": "<a href=\"https://www.purrweb.com\" target=\"_blank\" rel=\"noopener noreferrer\">Purweb</a>",
-      "period": "Sep 2024 — present",
+      "period": "Sep 2024 — Jun 2026",
       "roles": [
         "CTO in an outsource company: grading system, rollout of new tools and practices, strategic planning and technical resource management, development process optimization, hiring and recruitment strategy."
       ]
@@ -99,7 +106,7 @@
   "entrepreneurship": "Self-employed (Feb 2020 — Present): development of web and mobile applications, landing pages, Telegram bots.",
   "languages": "Russian (native), English (B2), Spanish (A1)",
   "articlesHtml": "Articles on Habr: <a href=\"https://habr.com/ru/users/AntonMoldakov\" target=\"_blank\">habr.com/ru/users/AntonMoldakov</a>, Next.js workshop: <a href=\"https://gitlab.com/AntonMoldakov/nextjs-workshop\" target=\"_blank\">gitlab.com/AntonMoldakov/nextjs-workshop</a>",
-  "hobbies": "Exploring new technologies, mentoring, grepiling, bjj, learning new languages.",
+  "hobbies": "Exploring new technologies, mentoring, grepiling, bjj, judo, learning new languages.",
   "footer": {
     "note": "Happy to share additional materials and code samples on request."
   },

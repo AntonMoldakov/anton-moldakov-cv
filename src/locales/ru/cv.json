@@ -67,8 +67,15 @@
   },
   "experience": [
     {
+      "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
+      "period": "Январь 2026 — настоящее время",
+      "roles": [
+        "Мобильный разработчик: Разработка внутренней платформы звонков"
+      ]
+    },
+    {
       "companyHtml": "<a href=\"https://www.purrweb.com/ru/\" target=\"_blank\" rel=\"noopener noreferrer\">Purweb</a>",
-      "period": "Сентябрь 2024 — настоящее время",
+      "period": "Сентябрь 2024 — Январь 2026",
       "roles": [
         "CTO в аутсорс-компании: разработка и внедрение грейдинг системы, ресерч и внедрение новых инструментов и подходов в управлении и разработке проектов, стратегическое планирование и управление техническими ресурсами, оптимизация процессов разработки, работа с рекрутментом и стратегиями найма."
       ]
@@ -99,7 +106,7 @@
   "entrepreneurship": "Самозанятый (Февраль 2020 — Сейчас): разработка веб и мобильных приложений, лендинговые страницы, Telegram-боты.",
   "languages": "Русский (родной), Английский (B2), Испанский (A1)",
   "articlesHtml": "Статьи на Хабре: <a href=\"https://habr.com/ru/users/AntonMoldakov\" target=\"_blank\">habr.com/ru/users/AntonMoldakov</a>, воркшоп по Next.js: <a href=\"https://gitlab.com/AntonMoldakov/nextjs-workshop\" target=\"_blank\">gitlab.com/AntonMoldakov/nextjs-workshop</a>",
-  "hobbies": "Изучение новых технологий, менторство, занимаюсь греплингом и bjj, изучаю новые языки.",
+  "hobbies": "Изучение новых технологий, менторство, занимаюсь греплингом и bjj, дзюдо, изучаю новые языки.",
   "footer": {
     "note": "Готов выслать дополнительные материалы и примеры кода по запросу."
   },
