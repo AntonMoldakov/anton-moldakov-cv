@@ -68,7 +68,14 @@
   "experience": [
     {
       "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
-      "period": "Jun 2026 — present",
+      "period": "Sep 2026 — present",
+      "roles": [
+        "Senior Mobile Developer: Development of an internal calling platform"
+      ]
+    },
+    {
+      "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
+      "period": "Jun 2026 — Sep 2026",
       "roles": [
         "Mobile Developer: Development of an internal calling platform"
       ]

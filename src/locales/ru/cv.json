@@ -68,7 +68,14 @@
   "experience": [
     {
       "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
-      "period": "Январь 2026 — настоящее время",
+      "period": "Сентябрь 2026 — настоящее время",
+      "roles": [
+        "Старший мобильный разработчик: Разработка внутренней платформы звонков"
+      ]
+    },
+    {
+      "companyHtml": "<a href=\"https://ozon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Ozon Tech</a>",
+      "period": "Январь 2026 — Сентябрь 2026",
       "roles": [
         "Мобильный разработчик: Разработка внутренней платформы звонков"
       ]
