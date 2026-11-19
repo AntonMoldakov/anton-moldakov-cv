@@ -39,6 +39,7 @@ export function LangSwitcher({ locale }: { locale: 'ru' | 'en' }) {
   return (
     <Link
       href={href}
+      hrefLang={targetLocale}
       onClick={handleClick}
       className="inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wide shadow-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800"
     >

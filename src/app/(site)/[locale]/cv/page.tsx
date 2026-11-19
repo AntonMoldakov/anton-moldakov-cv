@@ -1,15 +1,20 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PrintButton } from '../../../components/print-button';
-import { CvAvatar } from '../../../components/cv-avatar';
+import { PrintButton } from '../../../../components/print-button';
+import { CvAvatar } from '../../../../components/cv-avatar';
 import { ALink } from '@/components/a-link';
-import { APP_URL } from '@/constants/config';
+import { JsonLd } from '@/components/json-ld';
 import { Locale, LOCALES } from '@/constants/locales';
 import { HTMLRenderComponent } from '@/components/html-render-component';
+import {
+  absoluteUrl,
+  buildAlternates,
+  DEFAULT_OG_IMAGE,
+  localeUrl,
+  OG_LOCALES,
+} from '@/lib/seo';
 import cvEn from '@/locales/en/cv.json';
 import cvRu from '@/locales/ru/cv.json';
-
-// мне не нравится сейчас код, я хочу чтобы ты сделал большой рефакторинг на этой странице. Во превых все labels и весь текст на странице должен храниться в папке locales, он уже там хранится, и в зависимости от локализации используется нужная, нужно избегать isRu? потому что это не расширяемо если будет 3 локали. еще мне не нравится renderTextWithLinks. давай сделаем просто render html в таком случае. для этого. переиспользуй HTMLRenderComponent
 
 type CvMessages = typeof cvEn;
 
@@ -32,25 +37,36 @@ export async function generateMetadata({
     return {};
   }
   const t = getMessages(locale);
-
-  const baseUrl = APP_URL;
+  const title = `${t.meta.name} ${t.meta.titleSuffix}`;
 
   return {
-    title: `${t.meta.name} ${t.meta.titleSuffix}`,
+    title: { absolute: title },
     description: t.meta.description,
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: {
-        ru: `${baseUrl}/ru`,
-        en: `${baseUrl}/en`,
-      },
-    },
+    alternates: buildAlternates('/cv', locale),
     openGraph: {
-      title: `${t.meta.name} ${t.meta.titleSuffix}`,
+      title,
       description: t.meta.description,
-      url: `${baseUrl}/${locale}`,
+      url: localeUrl(locale, '/cv'),
+      siteName: t.meta.name,
       type: 'profile',
-      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      locale: OG_LOCALES[locale],
+      alternateLocale: locale === 'ru' ? ['en_US'] : ['ru_RU'],
+      firstName: t.meta.name.split(' ')[0],
+      lastName: t.meta.name.split(' ')[1],
+      images: [
+        {
+          url: DEFAULT_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: t.meta.description,
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }
@@ -68,8 +84,42 @@ export default async function LocalePage({
   }
 
   const t = getMessages(locale);
+
+  const profileSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: t.meta.name,
+      jobTitle: 'CTO / Teamlead / Frontend & Mobile developer',
+      description: t.profile.summary,
+      url: localeUrl(locale, '/cv'),
+      image: absoluteUrl('/images/avatar-640.webp'),
+      sameAs: [
+        t.contactsLinks.github,
+        t.contactsLinks.gitlab,
+        t.contactsLinks.linkedin,
+        t.contactsLinks.telegram,
+      ],
+      knowsAbout: [
+        'React',
+        'Next.js',
+        'React Native',
+        'TypeScript',
+        'Software architecture',
+        'DevOps',
+      ],
+    },
+  };
+
   return (
     <>
+      <JsonLd data={profileSchema} />
+
+      <h1 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+        {t.meta.name}
+      </h1>
+
       <section
         aria-labelledby="contacts-heading"
         className="grid gap-4 text-sm sm:grid-cols-[2fr,3fr] sm:gap-6"

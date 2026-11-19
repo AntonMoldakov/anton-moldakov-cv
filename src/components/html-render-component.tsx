@@ -1,4 +1,4 @@
-import React from 'react';
+import { optimizeContentHtml } from '@/lib/images';
 
 type Props = {
   html: string;
@@ -11,7 +11,7 @@ export function HTMLRenderComponent({ html, className }: Props) {
   return (
     <section
       className={baseClassName}
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: optimizeContentHtml(html) }}
     />
   );
 }

@@ -3,7 +3,7 @@
 import { useMetrica } from 'next-yandex-metrica';
 import { FC, AnchorHTMLAttributes } from 'react';
 
-interface ALink extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+type ALink = AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const ALink: FC<ALink> = ({ ...props }) => {
   const { ymEvent } = useMetrica();

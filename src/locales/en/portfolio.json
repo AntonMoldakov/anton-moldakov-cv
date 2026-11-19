@@ -1,5 +1,9 @@
 {
   "title": "Portfolio",
+  "meta": {
+    "title": "Portfolio",
+    "description": "Projects, pet projects and articles by Anton Moldakov: React, Next.js, React Native, Web3, WebAssembly, architecture and engineering practices."
+  },
   "search": {
     "placeholder": "Search by tags, title, description",
     "label": "Search"
@@ -14,6 +18,7 @@
     "createdAt": "Created at"
   },
   "post": {
-    "back": "Back to portfolio"
+    "back": "Back to portfolio",
+    "related": "Read also"
   }
 }

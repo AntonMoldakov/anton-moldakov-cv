@@ -195,6 +195,10 @@ html.dark .html-render blockquote {
   border-left-color: rgba(52, 211, 153, 0.7);
 }
 
+.html-render picture {
+  display: block;
+}
+
 .html-render img {
   max-width: 100%;
   height: auto;
@@ -202,7 +206,7 @@ html.dark .html-render blockquote {
 }
 
 .html-render img.size-medium {
-  height: 400px;
+  max-height: 60vh;
   width: 100%;
   object-fit: contain;
 }

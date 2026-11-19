@@ -19,7 +19,6 @@ type PortfolioPost = {
   createdAt: string;
   tags: string[];
   image: string;
-  content: string;
 };
 
 type Props = {
@@ -114,6 +113,7 @@ export function PortfolioList({ locale, messages: t, posts }: Props) {
                 <PostImage
                   src={post.image}
                   alt={post.title}
+                  sizes="(max-width: 640px) 100vw, 360px"
                   className="h-40 w-full bg-zinc-100 dark:bg-zinc-900"
                   imgClassName="h-full w-full transition duration-300 group-hover:scale-105"
                 />
